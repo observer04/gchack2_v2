@@ -1,2 +1,12 @@
 data/
 Train/
+gc/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
+.vscode/
+.DS_Store
+logs/
+*.log
+checkpoints/
