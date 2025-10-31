@@ -1,0 +1,112 @@
+# HKH Glacier Mapping Pretraining Configuration
+# Phase 0: Domain-specific initialization
+
+data:
+  # Download from: https://lila.science/datasets/hkh-glacier-mapping/
+  train_path: data/hkh/processed/train
+  val_path: data/hkh/processed/val
+  
+  # Input configuration
+  in_channels: 5  # B2, B3, B4, SWIR, TIR (harmonized to competition bands)
+  num_classes: 4  # Background, Glacier, Debris, Lake
+  
+  # Data loading
+  image_size: 512
+  batch_size: 16
+  num_workers: 4
+  pin_memory: true
+  
+  # Augmentation
+  augmentation:
+    enabled: true
+    geometric:
+      - horizontal_flip: 0.5
+      - vertical_flip: 0.5
+      - rotate_90: 0.5
+      - shift_scale_rotate:
+          shift_limit: 0.1
+          scale_limit: 0.2
+          rotate_limit: 45
+          p: 0.5
+    photometric:
+      - brightness_contrast:
+          brightness_limit: 0.2
+          contrast_limit: 0.2
+          p: 0.5
+      - gaussian_noise:
+          var_limit: [10, 50]
+          p: 0.3
+      - gamma:
+          gamma_limit: [80, 120]
+          p: 0.3
+
+model:
+  architecture: unet
+  encoder_name: resnet34
+  encoder_weights: null  # CRITICAL: No ImageNet for multispectral
+  decoder_attention_type: scse  # Channel-spatial squeeze-excitation
+  activation: null  # Will use softmax in loss
+
+# Phase A Loss: Simple and Stable
+loss:
+  # Focal Loss
+  focal_weight: 0.60
+  focal_gamma: 3.0
+  focal_alpha: [0.08, 0.27, 0.45, 0.20]  # [BG, Glacier, Debris, Lake]
+  
+  # Dice Loss
+  dice_weight: 0.40
+  dice_mode: multiclass
+  dice_per_class: true
+  
+  # No MCC or Boundary in Phase A (added in Phase B)
+
+optimizer:
+  name: AdamW
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  amsgrad: false
+
+scheduler:
+  name: ReduceLROnPlateau
+  mode: max  # Monitor validation MCC
+  patience: 5
+  factor: 0.5
+  min_lr: 1.0e-7
+  verbose: true
+
+training:
+  epochs: 50
+  
+  # Mixed precision training
+  use_amp: true
+  
+  # Gradient management
+  grad_clip: 1.0
+  
+  # Early stopping
+  early_stop_patience: 15
+  early_stop_delta: 0.001
+  early_stop_metric: val_mcc
+  
+  # Checkpointing
+  save_dir: weights
+  save_name: hkh_pretrained.pth
+  save_best_only: true
+  
+  # Logging
+  log_interval: 10  # Log every 10 batches
+  val_interval: 1   # Validate every epoch
+
+# Reproducibility
+seed: 42
+
+# Hardware
+device: cuda
+num_gpus: 1  # Use 2 if available (DataParallel)
+
+# Expected Outcome
+# -----------------
+# Validation MCC: 0.75 - 0.78
+# Checkpoint size: ~44 MB (ResNet34)
+# Training time: ~6-8 hours on T4 GPU

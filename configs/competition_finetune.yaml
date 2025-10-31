@@ -1,0 +1,158 @@
+# Competition Fine-tuning Configuration
+# Phase 1: Transfer learning from HKH → Competition data
+
+data:
+  # Competition dataset (25 training tiles)
+  train_path: Train
+  
+  # Input configuration
+  in_channels: 5  # B2, B3, B4, B6 (SWIR), B10 (TIR)
+  num_classes: 4  # Background=0, Glacier=1, Debris=2, Lake=3
+  
+  # Cross-validation
+  cv_folds: 5
+  cv_strategy: stratified_image  # Stratify by debris/lake presence
+  cv_seed: 42
+  
+  # Data loading
+  image_size: 512
+  batch_size: 8  # Smaller for limited data
+  accumulation_steps: 4  # Effective batch size = 32
+  num_workers: 4
+  pin_memory: true
+  
+  # Sampling strategy (CRITICAL)
+  sampling:
+    mode: pixel_balanced  # NOT image_weighted
+    target_distribution:
+      background: 0.10
+      glacier: 0.35
+      debris: 0.40
+      lake: 0.15
+    oversampling:
+      lake: 10  # 10x oversampling for rare class
+      debris: 8
+      glacier: 3
+      background: 1
+  
+  # Strong augmentation (critical for 25 images)
+  augmentation:
+    enabled: true
+    geometric:
+      - horizontal_flip: 0.5
+      - vertical_flip: 0.5
+      - rotate_90: 0.75
+      - shift_scale_rotate:
+          shift_limit: 0.15
+          scale_limit: 0.25
+          rotate_limit: 45
+          p: 0.7
+      - elastic_transform:
+          alpha: 120
+          sigma: 6
+          p: 0.3
+      - grid_distortion:
+          num_steps: 5
+          distort_limit: 0.3
+          p: 0.3
+    photometric:
+      - brightness_contrast:
+          brightness_limit: 0.25
+          contrast_limit: 0.25
+          p: 0.6
+      - gaussian_noise:
+          var_limit: [10, 50]
+          p: 0.4
+      - gamma:
+          gamma_limit: [75, 125]
+          p: 0.4
+      - gaussian_blur:
+          blur_limit: [3, 7]
+          p: 0.2
+
+model:
+  architecture: unet
+  encoder_name: resnet34
+  encoder_weights: null  # Will load from HKH pretrained
+  decoder_attention_type: scse
+  activation: null
+  
+  # Pretrained weights
+  pretrained_path: weights/hkh_pretrained.pth  # Load Phase 0 weights
+  freeze_encoder: false  # Fine-tune entire model
+
+# Phase B Loss: Metric-Aligned
+loss:
+  # Focal Loss
+  focal_weight: 0.25
+  focal_gamma: 3.0
+  focal_alpha: [0.08, 0.27, 0.45, 0.20]
+  
+  # Dice Loss
+  dice_weight: 0.25
+  dice_mode: multiclass
+  dice_per_class: true
+  
+  # MCC Loss (Focal-Phi variant for stability)
+  mcc_weight: 0.35
+  mcc_gamma: 2.0  # Focal weighting for hard classes
+  
+  # Boundary Loss
+  boundary_weight: 0.15
+  boundary_ramp: true
+  boundary_ramp_start: 0.05
+  boundary_ramp_end: 0.30
+  boundary_ramp_epochs: 100  # Ramp over first 100 epochs
+  boundary_interface_weight: 5.0  # 5x on debris-glacier interface
+
+optimizer:
+  name: AdamW
+  lr: 5.0e-5  # Lower than pretraining (fine-tuning)
+  weight_decay: 1.0e-4
+  amsgrad: false
+
+scheduler:
+  name: ReduceLROnPlateau
+  mode: max
+  patience: 8  # More patient for small dataset
+  factor: 0.5
+  min_lr: 1.0e-7
+  verbose: true
+
+training:
+  epochs: 150
+  
+  # Mixed precision
+  use_amp: true
+  
+  # Gradient management
+  grad_clip: 1.0
+  
+  # Early stopping
+  early_stop_patience: 20  # Very patient
+  early_stop_delta: 0.001
+  early_stop_metric: val_mcc
+  
+  # Checkpointing
+  save_dir: weights
+  save_name: best_fold{fold}.pth
+  save_best_only: true
+  save_last: true
+  
+  # Logging
+  log_interval: 5
+  val_interval: 1
+
+# Reproducibility
+seed: 42
+
+# Hardware
+device: cuda
+num_gpus: 1
+
+# Expected Outcome
+# -----------------
+# Single-fold MCC: 0.82 - 0.85
+# 5-fold average MCC: 0.80 - 0.83
+# Best checkpoint per fold: ~44 MB each
+# Training time: ~8-12 hours per fold on T4 GPU

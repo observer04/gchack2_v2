@@ -1,0 +1,282 @@
+GlacierHack 2025 — Monolith Project Report
+1. Objectives
+Build a robust 4-class glacier segmentation model (background, glacier, debris, lake).
+
+Optimize for Matthews Correlation Coefficient (MCC) on a hidden test set.
+
+Achieve leaderboard-competitive MCC ≥ 0.88 via HKH pretraining, balanced sampling, boundary-aware losses, and ensemble/TTA.
+
+2. Key Decisions
+No ImageNet pretraining for multispectral; train encoders from scratch for 5–7 channels.
+
+Pretrain on HKH Glacier Mapping dataset (7k+ tiles), then fine-tune on the competition set.
+
+Use image-level/geographic cross-validation; avoid pixel-level leakage.
+
+Replace aggressive restarts with ReduceLROnPlateau.
+
+Start simple; add complexity only after ablations confirm gains.
+
+3. Repository Structure and Workflow
+Recommended directories and flow:
+
+Proposed repo structure and workflow
+data/: raw competition dataset and HKH tiles
+
+notebooks/EDA.ipynb: reproducible EDA
+
+src/data/: loaders, patchers, samplers, transforms
+
+src/models/: architectures, attention, loss wrappers
+
+src/training/: trainers, schedules, CV loops, metrics
+
+src/inference/: tiling, TTA, post-processing, exporters
+
+configs/: YAML configs per experiment
+
+weights/: saved checkpoints (ensure best.pth < 300 MB)
+
+solution.py: inference entrypoint implementing maskgeration(...)
+
+reports/: experiment logs, CV summaries, ablations
+
+4. Data Plan
+Competition data: 5 bands (B2, B3, B4, B6, B10), labels encoded {0, 85, 170, 255}.
+
+HKH dataset: download from Microsoft Data for Society/Lila/TorchGeo; store under data/hkh/.
+
+Harmonize bands:
+
+Use B2/B3/B4/SWIR/TIR for competition; for HKH (Landsat-7), select closest analogs and optionally include DEM/slope if consistent across domains.
+
+Splits:
+
+5-fold, image-level stratified by presence of debris and lake; no pixel-wise splitting.
+
+5. EDA Outcomes (Actionable)
+Class imbalance extreme: background 69.6%, glacier 25.4%, debris 4.9%, lake 0.05% → Focal(γ=3) + class weights mandatory.
+
+Boundary pixels ≈ 5.7% drive MCC → boundary-aware loss with interface weighting (debris–glacier) is important; ramp weights.
+
+RGB highly correlated; SWIR/TIR most informative → use channel attention to de-emphasize RGB.
+
+Spectral indices weak; optional ratios only after baseline; GLCM features must be ablated (may help or hurt).
+
+Spatial autocorrelation very high → image-level CV required.
+
+6. Model Blueprint
+6.1 Baseline Architecture
+Boundary-Aware U-Net (BA-UNet) with channel attention:
+
+Encoder: ResNet34/50 initialized with encoder_weights=None
+
+In-channels: 5 (baseline) → evaluate 7 (add GLCM) via ablation
+
+Decoder: standard U-Net with skip connections
+
+Attention: cSE or lightweight channel-attention blocks after encoder stages
+
+Output: 4 logits → softmax
+
+6.2 Loss Function (start simple, then add)
+Phase A (baseline, stable):
+
+0.40 DicePerClass + 0.60 Focal(γ=3, α per-class)
+
+Phase B (metric-aligned):
+
+0.25 Focal(γ=3) + 0.25 DicePerClass + 0.35 FocalPhi-MCC + 0.15 Boundary(t)
+
+Boundary(t): ramp from 0.05 → 0.30 over 100 epochs, with 5× weight on debris–glacier interfaces.
+
+Class weights (tunable): [0.08, 0.27, 0.45, 0.20] for [background, glacier, debris, lake].
+
+6.3 Optimizer & Schedule
+Optimizer: AdamW(lr=1e-4, weight_decay=1e-4)
+
+Warmup: linear over 5 epochs to 1e-4
+
+Scheduler: ReduceLROnPlateau(mode='max', patience=5, factor=0.5, min_lr=1e-7) on validation MCC
+
+AMP: enable; Grad clip: 1.0
+
+6.4 Sampling Strategy (critical)
+Pixel-level balanced sampling by patch dominance:
+
+Target batch composition: BG 10%, Glacier 35%, Debris 40%, Lake 15%
+
+Hard example mining: +3× sampling for debris–glacier interface patches
+
+Lake oversampling: 10× for patches that contain lake pixels
+
+6.5 Augmentation
+Geometric: flips, 90° rotations, shift/scale/rotate, elastic/grid distortions
+
+Photometric: brightness/contrast, Gaussian noise, gamma
+
+Multispectral: per-band normalization; avoid mixing bands across sensors during fine-tune
+
+7. Pretraining → Fine-tuning Plan (HKH)
+7.1 Pretraining (HKH)
+Input: 5 channels aligned with competition; optionally add DEM/slope only if consistent
+
+Loss: Phase A (Focal(γ=3) + DicePerClass)
+
+Epochs: 50
+
+CV: 5-fold HKH internal (if metadata provided), otherwise holdout
+
+Save: hkh_pretrained.pth (encoder+decoder)
+
+7.2 Fine-tuning (Competition)
+Initialize from hkh_pretrained.pth
+
+Loss: Phase B (add FocalPhi-MCC + Boundary ramp)
+
+Epochs: 100–150 with ReduceLROnPlateau
+
+CV: 5-fold image-level stratified (debris/lake presence)
+
+Early stopping on MCC (patience 20, min delta 0.001)
+
+8. Ablations (must run in order)
+5ch vs 7ch (GLCM contrast+energy on SWIR) → keep 7ch only if +0.03 MCC+
+
+Channel attention on/off → keep if +0.02 MCC+
+
+Boundary interface weight {3×,5×,7×} → choose best
+
+Focal gamma {2, 3, 4} → choose best on MCC
+
+Sampler: image-level vs pixel-level → must show +0.05 MCC+ for pixel-level
+
+Indices (NDSI/NDWI) as channels → only include if +0.01 MCC+
+
+Record all results in reports/ablations.md with config hashes.
+
+9. Ensemble and TTA
+Train 3–5 diverse seeds/models:
+
+BA-UNet (5ch), BA-UNet (7ch, if ablation positive)
+
+BA-UNet + stronger boundary weighting
+
+DeepLabV3+ (Swin or ResNet) as diversity member if size allows
+
+TTA: {orig, hflip, vflip, rot90, rot180, rot270}, average softmax, apply per-class thresholds optimized on validation MCC.
+
+Multi-scale: optionally 0.75×, 1.0×, 1.25× if memory allows.
+
+10. Post-processing
+Morphology: remove components <100 px; fill holes <50 px
+
+CRF (light): 3–5 iterations with modest smoothness
+
+Threshold optimization: per-class thresholds maximizing MCC on validation
+
+11. Inference and Packaging
+solution.py must implement:
+
+maskgeration(imagepath, out_dir) reading all 5 bands per tile
+
+Load single best ensemble (or distilled single model) within 300 MB
+
+TTA and post-processing included
+
+Save masks matching Band1 filenames (0/85/170/255)
+
+Paths must come from CLI args; no hardcoding.
+
+12. Metrics and Logging
+Primary: MCC (overall and per-class)
+
+Secondary: IoU, Dice, Precision/Recall per class
+
+Track:
+
+Fold metrics in reports/cv_summary.md
+
+Confusion matrices per class
+
+Learning curves with LR and scheduler events
+
+Reproducibility:
+
+Seed all libs; log config files to reports/configs_used/
+
+13. Risk Register and Mitigations
+Overfitting due to 25 images → HKH pretraining (mandatory), strong augmentation
+
+MCC instability → use Focal Phi variant; smooth with ReduceLROnPlateau
+
+Lake class scarcity → oversampling + auxiliary BCE; relax penalty for <50 px misses
+
+Model size limit → avoid heavy backbones; consider model distillation for final packaging
+
+14. Milestones and Acceptance
+M1 (Day 1–2): Encoder-from-scratch + ReduceLROnPlateau; MCC ≥ 0.25 on CV
+
+M2 (Day 2–3): HKH pretraining + fine-tuning; MCC ≥ 0.70
+
+M3 (Day 3–4): Pixel-balanced sampler + boundary ramp; MCC ≥ 0.80
+
+M4 (Day 4–5): Ensemble + TTA + post-processing; MCC ≥ 0.88
+
+15. Change Requests (What to Modify in Current Repo)
+Add configs/ with YAML templates:
+
+data paths (hkh/competition), in_channels, loss weights, sampler ratios, scheduler params
+
+Implement src/data/samplers.py for pixel-level balanced sampling
+
+Implement src/models/attention.py for cSE/SE blocks
+
+Implement src/losses/focal_phi_mcc.py and src/losses/boundary.py with interface detection
+
+Implement src/training/train.py using ReduceLROnPlateau and adaptive boundary ramp
+
+Add src/inference/predict.py with TTA and post-processing
+
+Update solution.py to load best.pth, run TTA, and write 0/85/170/255 masks
+
+Add reports/ with ablations.md and cv_summary.md
+
+Document everything in README with run commands and configs
+
+16. Commands (illustrative, not exhaustive)
+Pretraining:
+
+python src/training/train.py -c configs/hkh_pretrain.yaml
+
+Fine-tuning:
+
+python src/training/train.py -c configs/comp_finetune.yaml --weights weights/hkh_pretrained.pth
+
+Inference:
+
+python solution.py --data <test_path> --out <out_dir>
+
+17. Expected Outcomes
+Single best model after HKH + tuning: MCC 0.82–0.86
+
+Ensemble + TTA: MCC 0.88–0.92 (Top 3 ready)
+
+Robustness: stable training, no LR-induced collapses, balanced per-class performance
+
+18. Appendix: Defaults
+Loss weights default:
+
+Focal(γ=3), class weights [0.08, 0.27, 0.45, 0.20]
+
+Boundary ramp 0.05 → 0.30 (5× interface)
+
+Batch composition:
+
+BG 10%, Glacier 35%, Debris 40%, Lake 15%
+
+Early stopping:
+
+patience 20 on MCC, min delta 0.001
+
+This monolith is the model builder’s blueprint. Implement the change requests in order, run the ablations, and track metrics/folds as specified. The HKH pretraining + encoder-from-scratch + balanced sampling + gentle LR scheduler are the non-negotiables that will move MCC from 0.04 to the 0.85–0.90 range.
