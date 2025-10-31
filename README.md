@@ -5,6 +5,38 @@
 
 ## 🚀 Quick Start
 
+### **DUAL-PLATFORM STRATEGY** (Recommended)
+
+#### Platform 1: Google Colab (HKH Pretraining)
+**Time:** 2.5 hours | **GPU:** 15GB T4 | **Disk:** 112GB
+
+```bash
+# Open notebooks/colab_hkh_pretrain.ipynb in Colab
+# Run all cells:
+# 1. Download HKH dataset (29.4 GB)
+# 2. Train on 14,190 glacier patches  
+# 3. Export pretrained weights
+# Expected: MCC 0.65-0.75 on HKH
+```
+
+#### Platform 2: Kaggle (Competition Fine-Tuning)
+**Time:** 2 hours | **GPU:** Dual T4 (15GB each)
+
+```bash
+# Upload HKH weights to Kaggle
+# Run competition training
+# Expected: MCC 0.85-0.92 (Top 3!)
+```
+
+### **ALTERNATIVE: Kaggle-Only** (Faster but Lower Score)
+
+Skip HKH pretraining, train directly on competition data.  
+**Expected: MCC 0.80-0.85** (Top 10-15)
+
+---
+
+### Old Instructions (Local Setup)
+
 ### 1. Setup Environment
 ```bash
 # Activate virtual environment
