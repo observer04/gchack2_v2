@@ -83,13 +83,21 @@ for i in range(torch.cuda.device_count()):
 %cd /kaggle/working/gchack2_v2
 ```
 
-#### Preprocess HKH (TODO)
+#### Preprocess HKH - Channel Matching Strategy
+
+**Key Issue:** HKH has 15 channels, competition has 5.
+
+**Solution:** `HKHDataset` class automatically selects matching bands:
+- **HKH Channels:** [B1, B2, B3, B4, B5, B6_low, B6_high, B7, B8_pan, BQA, NDVI, NDSI, NDWI, elev, slope]
+- **Selected (5):** [B1_Blue, B2_Green, B3_Red, B5_SWIR1, B6_high_TIR]
+- **Matches Competition:** [Band1, Band2, Band3, Band4, Band5]
+
+This ensures pretrained weights transfer seamlessly to competition data!
 
 ```python
-# TODO: Create preprocessing script
-# For now, manually organize into:
-# data/hkh/processed/images/*.tif (7229 files, 512x512, 7 bands)
-# data/hkh/processed/masks/*.tif (7229 files, 512x512, 1 band)
+# The HKHDataset class handles this automatically - no manual preprocessing!
+# Just verify the data structure:
+!ls -lh data/hkh/raw/
 ```
 
 #### Run HKH Training
@@ -102,6 +110,8 @@ for i in range(torch.cuda.device_count()):
 
 **Expected output:**
 ```
+Using HKHDataset with 5 channels (matching competition)
+Loaded 14190 patches for train
 Epoch 59/60
 Train: train_loss: 0.2134 | train_mcc: 0.7421
 Val:   val_loss: 0.2456 | val_mcc: 0.7612

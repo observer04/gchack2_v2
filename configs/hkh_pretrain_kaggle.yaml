@@ -4,6 +4,7 @@
 
 data:
   hkh_dir: "/kaggle/working/gchack2_v2/data/hkh/processed"
+  dataset_type: "hkh"  # Use HKHDataset class
   train_split: 0.85
   val_split: 0.15
   num_workers: 4  # Kaggle has 4 CPUs
@@ -14,7 +15,7 @@ model:
   architecture: "boundary_aware_unet"
   encoder: "resnet34"
   encoder_weights: null  # CRITICAL: Train from scratch for multispectral
-  in_channels: 7  # HKH has 7 Landsat 7 bands
+  in_channels: 5  # Use 5 channels to match competition (NOT 7)
   num_classes: 4  # background, glacier, debris, lake
   activation: null  # No final activation (use logits)
   attention: "cse"  # Channel-Spatial Squeeze & Excitation
@@ -89,8 +90,7 @@ logging:
   
 seed: 42
 
-# Expected normalization stats (computed from HKH dataset)
-# Will be updated after preprocessing
-normalization:
-  mean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # Placeholder
-  std: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]   # Placeholder
+# HKH Dataset Channel Selection
+# HKH raw data has 15 channels: [B1-B9_Landsat, BQA, NDVI, NDSI, NDWI, elev, slope]
+# We select 5 to match competition: [B1_Blue, B2_Green, B3_Red, B5_SWIR1, B6_TIR_high]
+# This ensures pretrained weights transfer directly to competition data
