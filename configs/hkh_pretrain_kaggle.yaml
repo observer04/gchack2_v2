@@ -1,0 +1,96 @@
+# HKH Pretraining Configuration - Optimized for Kaggle Dual T4
+# Expected runtime: 2 hours
+# Expected MCC: 0.75-0.78
+
+data:
+  hkh_dir: "/kaggle/working/gchack2_v2/data/hkh/processed"
+  train_split: 0.85
+  val_split: 0.15
+  num_workers: 4  # Kaggle has 4 CPUs
+  pin_memory: true
+  persistent_workers: true
+  
+model:
+  architecture: "boundary_aware_unet"
+  encoder: "resnet34"
+  encoder_weights: null  # CRITICAL: Train from scratch for multispectral
+  in_channels: 7  # HKH has 7 Landsat 7 bands
+  num_classes: 4  # background, glacier, debris, lake
+  activation: null  # No final activation (use logits)
+  attention: "cse"  # Channel-Spatial Squeeze & Excitation
+  
+training:
+  epochs: 60
+  batch_size: 48  # Optimal for dual T4 (24 per GPU)
+  gradient_accumulation_steps: 1
+  use_amp: true  # Mixed precision training
+  gradient_clip_val: 1.0
+  
+  optimizer:
+    type: "AdamW"
+    lr: 0.0005  # Increased for larger batch size
+    weight_decay: 0.0001
+    betas: [0.9, 0.999]
+  
+  scheduler:
+    type: "ReduceLROnPlateau"
+    mode: "max"  # Maximize MCC
+    factor: 0.5
+    patience: 5
+    min_lr: 1.0e-6
+    verbose: true
+  
+  loss:
+    # Phase A: Simple loss (no MCC, no boundary)
+    focal_weight: 0.60
+    dice_weight: 0.40
+    boundary_weight: 0.00
+    mcc_weight: 0.00
+    
+    # Focal loss params
+    focal_alpha: [1.0, 2.0, 3.0, 4.0]  # [BG, Glacier, Debris, Lake]
+    focal_gamma: 2.0
+    
+    # Dice loss params
+    dice_smooth: 1.0
+    
+device:
+  use_parallel: true  # Enable nn.DataParallel for dual T4
+  gpu_ids: [0, 1]
+  
+augmentation:
+  # Training augmentations
+  train:
+    horizontal_flip: 0.5
+    vertical_flip: 0.5
+    rotate_limit: 45
+    scale_limit: 0.2
+    shift_limit: 0.1
+    brightness_limit: 0.2
+    contrast_limit: 0.2
+    
+  # Validation: only resize/normalize
+  val:
+    resize: 512
+    
+checkpoints:
+  save_dir: "/kaggle/working/gchack2_v2/weights"
+  save_best: true
+  save_last: true
+  save_every: 10  # Save every 10 epochs
+  monitor: "val_mcc"
+  mode: "max"
+  
+logging:
+  log_dir: "/kaggle/working/gchack2_v2/logs"
+  log_every: 10  # Log every 10 batches
+  log_images: true
+  num_images: 4  # Log 4 sample predictions per epoch
+  
+seed: 42
+
+# Expected normalization stats (computed from HKH dataset)
+# Will be updated after preprocessing
+normalization:
+  mean: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # Placeholder
+  std: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]   # Placeholder

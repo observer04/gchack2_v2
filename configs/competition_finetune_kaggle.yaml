@@ -1,0 +1,123 @@
+# Competition Fine-Tuning Configuration - Optimized for Kaggle Dual T4
+# Expected runtime: 40 min per fold (3.5 hours for 5 folds)
+# Expected MCC: 0.82-0.85 per fold
+
+data:
+  comp_dir: "/kaggle/working/gchack2_v2/data/competition"
+  num_folds: 5
+  current_fold: 0  # Will be overridden by command-line arg
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  
+model:
+  architecture: "boundary_aware_unet"
+  encoder: "resnet34"
+  encoder_weights: null  # CRITICAL: No ImageNet
+  in_channels: 5  # Competition has 5 bands
+  num_classes: 4
+  activation: null
+  attention: "cse"
+  pretrained_path: "/kaggle/working/gchack2_v2/weights/hkh_pretrained.pth"
+  
+  # Band extraction mapping (HKH → Competition)
+  # HKH uses Landsat 7 bands [B1, B2, B3, B5, B6, B7, B4]
+  # Competition uses [Band1, Band2, Band3, Band4, Band5]
+  # Mapping: HKH indices [0,1,2,5,6] → Competition [Band1-5]
+  band_mapping: [0, 1, 2, 5, 6]
+  
+training:
+  epochs: 150
+  batch_size: 32  # Smaller due to limited training data
+  gradient_accumulation_steps: 2  # Effective batch = 64
+  use_amp: true
+  gradient_clip_val: 1.0
+  
+  optimizer:
+    type: "AdamW"
+    lr: 0.0001  # Lower for fine-tuning
+    weight_decay: 0.0001
+    betas: [0.9, 0.999]
+  
+  scheduler:
+    type: "ReduceLROnPlateau"
+    mode: "max"
+    factor: 0.5
+    patience: 8
+    min_lr: 1.0e-7
+    verbose: true
+  
+  loss:
+    # Phase B: Full loss with MCC and boundary
+    focal_weight: 0.25
+    dice_weight: 0.25
+    mcc_weight: 0.35  # Primary optimization target
+    boundary_weight: 0.15
+    
+    # Boundary loss ramp
+    boundary_ramp: true
+    boundary_ramp_start: 0.05  # Start at 5% of final weight
+    boundary_ramp_epochs: 30  # Ramp over 30 epochs
+    
+    # Focal loss params
+    focal_alpha: [1.0, 2.0, 3.0, 4.0]
+    focal_gamma: 2.0
+    
+    # Dice loss params
+    dice_smooth: 1.0
+    
+    # MCC loss params
+    mcc_phi: 0.7  # Focal-Phi parameter
+    
+  sampler:
+    type: "pixel_balanced"
+    target_distribution:
+      background: 0.10
+      glacier: 0.35
+      debris: 0.40
+      lake: 0.15
+    oversample_rare: true
+    min_pixels_per_class: 100  # Skip images with < 100 pixels of a class
+    
+device:
+  use_parallel: true
+  gpu_ids: [0, 1]
+  
+augmentation:
+  # More aggressive augmentations for small dataset
+  train:
+    horizontal_flip: 0.5
+    vertical_flip: 0.5
+    rotate_limit: 90  # Full 90° rotation
+    scale_limit: 0.3
+    shift_limit: 0.2
+    brightness_limit: 0.3
+    contrast_limit: 0.3
+    elastic_transform: true
+    grid_distortion: true
+    optical_distortion: true
+    
+  val:
+    resize: 512
+    
+checkpoints:
+  save_dir: "/kaggle/working/gchack2_v2/weights/folds"
+  save_best: true
+  save_last: true
+  save_every: 25
+  monitor: "val_mcc"
+  mode: "max"
+  
+logging:
+  log_dir: "/kaggle/working/gchack2_v2/logs/folds"
+  log_every: 5
+  log_images: true
+  num_images: 4
+  
+seed: 42
+
+# Use same normalization stats as HKH for proper transfer
+# Will be loaded from HKH preprocessing
+normalization:
+  mean: [0.0, 0.0, 0.0, 0.0, 0.0]  # Placeholder (5 bands)
+  std: [1.0, 1.0, 1.0, 1.0, 1.0]   # Placeholder

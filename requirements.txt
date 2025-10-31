@@ -1,0 +1,39 @@
+# Core deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Segmentation models
+segmentation-models-pytorch>=0.3.3
+
+# Data augmentation
+albumentations>=1.3.0
+
+# Image processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+scikit-image>=0.21.0
+
+# Geospatial
+rasterio>=1.3.0
+geopandas>=0.13.0
+
+# Metrics and utilities
+scikit-learn>=1.3.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Configuration
+PyYAML>=6.0
+omegaconf>=2.3.0
+
+# Logging and visualization
+tensorboard>=2.13.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+
+# Optional: For model architectures
+timm>=0.9.0  # For additional encoders
+
+# Optional: For post-processing
+scipy>=1.11.0  # For CRF and morphology
