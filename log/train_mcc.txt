@@ -1,0 +1,256 @@
+ Starting training...
+   Total epochs: 150
+   Best checkpoint will be saved to: /kaggle/working/weights2
+Epoch 1/150: 100%
+ 40/40 [00:08<00:00,  6.39it/s, loss=0.9199, base=0.9196, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.55it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=26.93%, True=63.14%
+   Class 1: Pred=13.44%, True=0.00%
+   Class 2: Pred=59.53%, True=0.00%
+   Class 3: Pred=0.11%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.3558, Glacier=0.0000, Debris=0.0000, Lake=-0.0111
+   Per-class Acc: BG=0.3899, Glacier=0.0000, Debris=0.0000, Lake=0.0006
+
+📊 Epoch 1/150
+   Train Loss: 0.9574
+   Val Loss: 0.9214
+   Val MCC: nan
+   Class MCCs: Background=0.3558, Glacier=0.0000, Debris=0.0000, Lake=-0.0111
+   LR: Encoder=0.00004987, Decoder=0.00019945
+   No improvement (1/20)
+Epoch 2/150: 100%
+ 40/40 [00:07<00:00,  6.26it/s, loss=0.8366, base=0.8362, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.95it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=39.47%, True=63.14%
+   Class 1: Pred=2.22%, True=0.00%
+   Class 2: Pred=58.31%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.3252, Glacier=0.0000, Debris=0.0000, Lake=-0.0022
+   Per-class Acc: BG=0.5162, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 2/150
+   Train Loss: 0.8831
+   Val Loss: 0.9358
+   Val MCC: nan
+   Class MCCs: Background=0.3252, Glacier=0.0000, Debris=0.0000, Lake=-0.0022
+   LR: Encoder=0.00004946, Decoder=0.00019783
+   No improvement (2/20)
+Epoch 3/150: 100%
+ 40/40 [00:07<00:00,  6.32it/s, loss=0.9126, base=0.9122, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.93it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=30.46%, True=63.14%
+   Class 1: Pred=0.07%, True=0.00%
+   Class 2: Pred=69.47%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.3364, Glacier=0.0000, Debris=0.0000, Lake=-0.0004
+   Per-class Acc: BG=0.4229, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 3/150
+   Train Loss: 0.8439
+   Val Loss: 0.9085
+   Val MCC: nan
+   Class MCCs: Background=0.3364, Glacier=0.0000, Debris=0.0000, Lake=-0.0004
+   LR: Encoder=0.00004880, Decoder=0.00019513
+   No improvement (3/20)
+Epoch 4/150: 100%
+ 40/40 [00:07<00:00,  6.31it/s, loss=0.8783, base=0.8780, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.93it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=44.12%, True=63.14%
+   Class 1: Pred=0.01%, True=0.00%
+   Class 2: Pred=55.87%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: 93.6146 (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4952, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.6291, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 4/150
+   Train Loss: 0.8112
+   Val Loss: 0.7999
+   Val MCC: 93.6146
+   Class MCCs: Background=0.4952, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00004788, Decoder=0.00019140
+   ✅ New best model saved! MCC: 93.6146
+Epoch 5/150: 100%
+ 40/40 [00:07<00:00,  6.11it/s, loss=0.7800, base=0.7797, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.90it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=38.70%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=61.30%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4446, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.5525, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 5/150
+   Train Loss: 0.8032
+   Val Loss: 0.8214
+   Val MCC: nan
+   Class MCCs: Background=0.4446, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00004672, Decoder=0.00018667
+   No improvement (1/20)
+Epoch 6/150: 100%
+ 40/40 [00:07<00:00,  6.07it/s, loss=0.7093, base=0.7090, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.90it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=38.27%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=61.73%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4514, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.5503, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 6/150
+   Train Loss: 0.7862
+   Val Loss: 0.8080
+   Val MCC: nan
+   Class MCCs: Background=0.4514, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00004532, Decoder=0.00018100
+   No improvement (2/20)
+Epoch 7/150: 100%
+ 40/40 [00:07<00:00,  6.26it/s, loss=0.6739, base=0.6736, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.96it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=55.24%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=44.76%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: 68.5984 (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4943, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.7402, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 7/150
+   Train Loss: 0.7584
+   Val Loss: 0.7821
+   Val MCC: 68.5984
+   Class MCCs: Background=0.4943, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00004371, Decoder=0.00017444
+   No improvement (3/20)
+Epoch 8/150: 100%
+ 40/40 [00:07<00:00,  6.37it/s, loss=0.6568, base=0.6565, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.97it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=53.13%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=46.87%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: nan (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4992, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.7216, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 8/150
+   Train Loss: 0.7751
+   Val Loss: 0.7649
+   Val MCC: nan
+   Class MCCs: Background=0.4992, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00004189, Decoder=0.00016708
+   No improvement (4/20)
+Epoch 9/150: 100%
+ 40/40 [00:07<00:00,  6.30it/s, loss=0.8231, base=0.8228, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.95it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=59.23%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=40.77%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: 149.5944 (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.5675, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.8054, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 9/150
+   Train Loss: 0.7591
+   Val Loss: 0.7279
+   Val MCC: 149.5944
+   Class MCCs: Background=0.5675, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00003990, Decoder=0.00015898
+   ✅ New best model saved! MCC: 149.5944
+Epoch 10/150: 100%
+ 40/40 [00:07<00:00,  6.35it/s, loss=0.8499, base=0.8495, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.91it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=53.86%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=46.14%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: 77.1497 (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.4986, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.7285, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 10/150
+   Train Loss: 0.7484
+   Val Loss: 0.7620
+   Val MCC: 77.1497
+   Class MCCs: Background=0.4986, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00003775, Decoder=0.00015025
+   No improvement (1/20)
+Epoch 11/150: 100%
+ 40/40 [00:07<00:00,  6.33it/s, loss=0.7751, base=0.7747, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.97it/s]
+
+🔍 VALIDATION PREDICTIONS:
+   Class 0: Pred=57.33%, True=63.14%
+   Class 1: Pred=0.00%, True=0.00%
+   Class 2: Pred=42.67%, True=0.00%
+   Class 3: Pred=0.00%, True=36.86%
+
+📊 VALIDATION RESULTS:
+   Overall MCC: 72.2433 (✅ CORRECT - Gorodkin formula)
+   Per-class MCC: BG=0.5068, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   Per-class Acc: BG=0.7648, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+
+📊 Epoch 11/150
+   Train Loss: 0.7549
+   Val Loss: 0.7514
+   Val MCC: 72.2433
+   Class MCCs: Background=0.5068, Glacier=0.0000, Debris=0.0000, Lake=0.0000
+   LR: Encoder=0.00003547, Decoder=0.00014097
+   No improvement (2/20)

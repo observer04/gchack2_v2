@@ -1,0 +1,135 @@
+TCP port of the Initial access machine which hosts monitoring software
+8091
+
+
+Hostname of the initial access machine (Example : Case sensitive)
+app-server
+
+
+Web File which reveals sensitive information (Example : Case sensitive)
+dummy.css
+
+
+AWS Key value found in the exposed file
+AKIAIOSFODNN7EXAMPLE
+
+
+Working password of “HotHost” web application
+Very3stroungPassword
+
+
+Role of “admin” user in the “HotHost” web application (Example : Case sensitive)
+superadmin
+
+
+TCP Port which is provisioned for system file monitoring
+23100
+
+
+Complete URL with which hosts system “passwd” can be read (Example : http://IP:port/location?function=file:///location/etc/passwd)
+http://172.26.10.11:23100/fetch?url=file:///hostfs/etc/passwd
+Completed
+
+What’s the User ID of the “app-admin”
+1000
+
+
+Commands that “app-admin” can run on the initial access machine (Example : Mention exact path)
+/usr/bin/vi
+
+
+Log file location which discover another network IP address (Example : Mention exact path i.e. /tmp/file.log)
+/var/log/auth.log
+
+
+The service version name running on web port on the discovered ip address (Enter the version only : 3.2.1)
+2.4.58
+
+
+Route in the discovered IP address which provides access to the system files (Example : Do not provide forward slash, Case sensitive))
+Elfinder
+
+What is the password of the sync_user
+Summer@2025
+
+
+What is the NT hash of the Domain Administrator
+3d15cb1141d579823f8bb08f1f23e316
+
+
+What is the hostname of the domain controller (Example : Case sensitive)
+ENT-DC
+
+
+Directory location in the domain controller which contains the sensitive xml file (Example : C:\Windows\System32)
+C:\Users\Administrator\Desktop
+
+
+What is the SSN number of the user “Christopher A. Whitaker”
+550-12-8421
+TCP port of the Initial access machine which hosts monitoring software
+8091
+Completed
+
+Web directory with which reveals sensitive information (Example : Case sensitive)
+assets
+Completed
+
+Base64 hash of db-pass credentials
+REJfUEBzc3cwcmQh
+Completed
+
+Working password of “HotHost” web application
+Very3stroungPassword
+Completed
+
+Web application route which reveals the system files (Example : /route, do not include forward slash)
+pug
+Completed
+
+What is the “secretToken” string which is present in the above route (Example : Case sensitive)
+Monitor the system files
+Completed
+
+Payload through which hosts system “passwd” file can be read (Example : file:///location/passwd)
+file:///hostfs/etc/passwd
+Completed
+
+Discovered credentials of “app-admin”
+@dmin@123
+Completed
+
+Commands that “app-admin” can run on the initial access machine (Example : Mention exact path like /etc/passwd)
+/usr/bin/vi
+Completed
+
+IP Address discovered from the log file
+10.10.10.20
+Completed
+
+The service version name running on web port on the discovered ip address (Enter the version only : 3.2.1)
+2.4.58
+Completed
+
+Complete URL which reveals sync_user credentials (Example : http://ip/location/file.txt, Case sensitive))
+http://10.10.10.20/elfinder/files/AD_Resources.txt
+Completed
+
+What is the password of the sync_user
+Summer@2025
+Completed
+
+What is the Domain Controller IP Address
+10.10.10.100
+Completed
+
+What is the krbtgt account NT hash of the domain
+36405f88da713c31bbff52e57aea1f86
+Completed
+
+Directory location in the domain controller which contains the sensitive xml file (Example : C:\Windows\System32)
+C:\Users\Administrator\Desktop
+Completed
+
+What is the base salary of the user with the position “Director of Engineering”
+189500

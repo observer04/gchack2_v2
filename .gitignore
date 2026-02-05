@@ -1,5 +1,5 @@
-data/
-Train/
+#data/
+#Train/
 gc/
 __pycache__/
 *.pyc
@@ -10,3 +10,4 @@ __pycache__/
 logs/
 *.log
 checkpoints/
+gc/lib/

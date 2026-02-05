@@ -1,0 +1,643 @@
+STARTING TRAINING
+======================================================================
+
+Epoch 1/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:42<00:00,  1.50it/s, loss=0.9991]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.80it/s]
+
+Epoch 1 Summary:
+  Train Loss: 1.4137 (Focal: 2.2971, Lovász: 0.8248, Dice: 0.8248)
+  Val MCC: 0.1644
+    ├─ Glacier MCC: 0.1370
+    ├─ Debris MCC:  -0.0001
+    └─ Lake MCC:    0.1259
+  ✓ New best model saved! (MCC: 0.1644)
+
+Epoch 2/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:42<00:00,  1.49it/s, loss=0.7655]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+
+Epoch 2 Summary:
+  Train Loss: 0.8734 (Focal: 1.0205, Lovász: 0.7754, Dice: 0.7754)
+  Val MCC: 0.2897
+    ├─ Glacier MCC: 0.3840
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.1775
+  ✓ New best model saved! (MCC: 0.2897)
+
+Epoch 3/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:45<00:00,  1.39it/s, loss=0.7527]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 3 Summary:
+  Train Loss: 0.7713 (Focal: 0.8292, Lovász: 0.7327, Dice: 0.7327)
+  Val MCC: 0.3187
+    ├─ Glacier MCC: 0.4277
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.1840
+  ✓ New best model saved! (MCC: 0.3187)
+
+Epoch 4/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.7182]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.74it/s]
+
+Epoch 4 Summary:
+  Train Loss: 0.7268 (Focal: 0.7495, Lovász: 0.7117, Dice: 0.7117)
+  Val MCC: 0.3402
+    ├─ Glacier MCC: 0.4548
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.1955
+  ✓ New best model saved! (MCC: 0.3402)
+
+Epoch 5/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.6640]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 5 Summary:
+  Train Loss: 0.6958 (Focal: 0.7014, Lovász: 0.6921, Dice: 0.6921)
+  Val MCC: 0.3416
+    ├─ Glacier MCC: 0.4528
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.1952
+  ✓ New best model saved! (MCC: 0.3416)
+
+Epoch 6/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.6462]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 6 Summary:
+  Train Loss: 0.6868 (Focal: 0.6861, Lovász: 0.6873, Dice: 0.6873)
+  Val MCC: 0.3490
+    ├─ Glacier MCC: 0.4535
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.1982
+  ✓ New best model saved! (MCC: 0.3490)
+
+Epoch 7/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.6294]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 7 Summary:
+  Train Loss: 0.6654 (Focal: 0.6430, Lovász: 0.6804, Dice: 0.6804)
+  Val MCC: 0.3633
+    ├─ Glacier MCC: 0.4737
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2064
+  ✓ New best model saved! (MCC: 0.3633)
+
+Epoch 8/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.6669]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+
+Epoch 8 Summary:
+  Train Loss: 0.6579 (Focal: 0.6369, Lovász: 0.6720, Dice: 0.6720)
+  Val MCC: 0.3627
+    ├─ Glacier MCC: 0.4736
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2067
+
+Epoch 9/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.6917]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 9 Summary:
+  Train Loss: 0.6536 (Focal: 0.6284, Lovász: 0.6705, Dice: 0.6705)
+  Val MCC: 0.3619
+    ├─ Glacier MCC: 0.4745
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2040
+
+Epoch 10/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.6752]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+
+Epoch 10 Summary:
+  Train Loss: 0.6555 (Focal: 0.6334, Lovász: 0.6702, Dice: 0.6702)
+  Val MCC: 0.3610
+    ├─ Glacier MCC: 0.4725
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2036
+  ✓ Checkpoint saved
+
+Epoch 11/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.6148]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 11 Summary:
+  Train Loss: 0.6492 (Focal: 0.6241, Lovász: 0.6658, Dice: 0.6658)
+  Val MCC: 0.3693
+    ├─ Glacier MCC: 0.4767
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2195
+  ✓ New best model saved! (MCC: 0.3693)
+
+Epoch 12/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.6339]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 12 Summary:
+  Train Loss: 0.6430 (Focal: 0.6181, Lovász: 0.6596, Dice: 0.6596)
+  Val MCC: 0.3662
+    ├─ Glacier MCC: 0.4942
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2087
+
+Epoch 13/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.6336]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+
+Epoch 13 Summary:
+  Train Loss: 0.6296 (Focal: 0.5932, Lovász: 0.6539, Dice: 0.6539)
+  Val MCC: 0.3638
+    ├─ Glacier MCC: 0.4805
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2110
+
+Epoch 14/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.6063]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 14 Summary:
+  Train Loss: 0.6110 (Focal: 0.5603, Lovász: 0.6448, Dice: 0.6448)
+  Val MCC: 0.3800
+    ├─ Glacier MCC: 0.4942
+    ├─ Debris MCC:  -0.0001
+    └─ Lake MCC:    0.2134
+  ✓ New best model saved! (MCC: 0.3800)
+
+Epoch 15/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5828]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 15 Summary:
+  Train Loss: 0.6029 (Focal: 0.5499, Lovász: 0.6382, Dice: 0.6382)
+  Val MCC: 0.3877
+    ├─ Glacier MCC: 0.4929
+    ├─ Debris MCC:  -0.0001
+    └─ Lake MCC:    0.2231
+  ✓ New best model saved! (MCC: 0.3877)
+
+Epoch 16/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5702]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+
+Epoch 16 Summary:
+  Train Loss: 0.5848 (Focal: 0.5151, Lovász: 0.6313, Dice: 0.6313)
+  Val MCC: 0.4041
+    ├─ Glacier MCC: 0.5035
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2400
+  ✓ New best model saved! (MCC: 0.4041)
+
+Epoch 17/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5614]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+
+Epoch 17 Summary:
+  Train Loss: 0.5839 (Focal: 0.5264, Lovász: 0.6222, Dice: 0.6222)
+  Val MCC: 0.4024
+    ├─ Glacier MCC: 0.4893
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2468
+
+Epoch 18/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5848]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 18 Summary:
+  Train Loss: 0.5695 (Focal: 0.4979, Lovász: 0.6172, Dice: 0.6172)
+  Val MCC: 0.4039
+    ├─ Glacier MCC: 0.4932
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2435
+
+Epoch 19/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.5641]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 19 Summary:
+  Train Loss: 0.5663 (Focal: 0.4998, Lovász: 0.6107, Dice: 0.6107)
+  Val MCC: 0.4128
+    ├─ Glacier MCC: 0.5037
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2478
+  ✓ New best model saved! (MCC: 0.4128)
+
+Epoch 20/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5742]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 20 Summary:
+  Train Loss: 0.5605 (Focal: 0.4883, Lovász: 0.6087, Dice: 0.6087)
+  Val MCC: 0.4178
+    ├─ Glacier MCC: 0.5115
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2504
+  ✓ New best model saved! (MCC: 0.4178)
+  ✓ Checkpoint saved
+
+Epoch 21/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5656]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 21 Summary:
+  Train Loss: 0.5559 (Focal: 0.4863, Lovász: 0.6023, Dice: 0.6023)
+  Val MCC: 0.4190
+    ├─ Glacier MCC: 0.5108
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2534
+  ✓ New best model saved! (MCC: 0.4190)
+
+Epoch 22/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5201]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 22 Summary:
+  Train Loss: 0.5538 (Focal: 0.4853, Lovász: 0.5995, Dice: 0.5995)
+  Val MCC: 0.4169
+    ├─ Glacier MCC: 0.5019
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2511
+
+Epoch 23/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.5368]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+
+Epoch 23 Summary:
+  Train Loss: 0.5502 (Focal: 0.4762, Lovász: 0.5995, Dice: 0.5995)
+  Val MCC: 0.4206
+    ├─ Glacier MCC: 0.5079
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2506
+  ✓ New best model saved! (MCC: 0.4206)
+
+Epoch 24/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5616]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.61it/s]
+
+Epoch 24 Summary:
+  Train Loss: 0.5428 (Focal: 0.4674, Lovász: 0.5931, Dice: 0.5931)
+  Val MCC: 0.4259
+    ├─ Glacier MCC: 0.5092
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2552
+  ✓ New best model saved! (MCC: 0.4259)
+
+Epoch 25/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5528]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 25 Summary:
+  Train Loss: 0.5373 (Focal: 0.4592, Lovász: 0.5894, Dice: 0.5894)
+  Val MCC: 0.4254
+    ├─ Glacier MCC: 0.5127
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2560
+
+Epoch 26/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5322]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 26 Summary:
+  Train Loss: 0.5365 (Focal: 0.4610, Lovász: 0.5868, Dice: 0.5868)
+  Val MCC: 0.4296
+    ├─ Glacier MCC: 0.5121
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2612
+  ✓ New best model saved! (MCC: 0.4296)
+
+Epoch 27/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.5077]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.57it/s]
+
+Epoch 27 Summary:
+  Train Loss: 0.5389 (Focal: 0.4600, Lovász: 0.5914, Dice: 0.5914)
+  Val MCC: 0.4314
+    ├─ Glacier MCC: 0.5118
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2627
+  ✓ New best model saved! (MCC: 0.4314)
+
+Epoch 28/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5247]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 28 Summary:
+  Train Loss: 0.5401 (Focal: 0.4680, Lovász: 0.5883, Dice: 0.5883)
+  Val MCC: 0.4298
+    ├─ Glacier MCC: 0.5109
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2608
+
+Epoch 29/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.5188]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 29 Summary:
+  Train Loss: 0.5355 (Focal: 0.4591, Lovász: 0.5865, Dice: 0.5865)
+  Val MCC: 0.4314
+    ├─ Glacier MCC: 0.5133
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2623
+  ✓ New best model saved! (MCC: 0.4314)
+
+Epoch 30/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5040]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+
+Epoch 30 Summary:
+  Train Loss: 0.5400 (Focal: 0.4699, Lovász: 0.5868, Dice: 0.5868)
+  Val MCC: 0.4303
+    ├─ Glacier MCC: 0.5120
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2606
+  ✓ Checkpoint saved
+
+Epoch 31/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5113]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 31 Summary:
+  Train Loss: 0.5385 (Focal: 0.4633, Lovász: 0.5887, Dice: 0.5887)
+  Val MCC: 0.4357
+    ├─ Glacier MCC: 0.5181
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2631
+  ✓ New best model saved! (MCC: 0.4357)
+
+Epoch 32/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5681]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+
+Epoch 32 Summary:
+  Train Loss: 0.5342 (Focal: 0.4617, Lovász: 0.5825, Dice: 0.5825)
+  Val MCC: 0.4439
+    ├─ Glacier MCC: 0.5169
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2798
+  ✓ New best model saved! (MCC: 0.4439)
+
+Epoch 33/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.5076]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+
+Epoch 33 Summary:
+  Train Loss: 0.5252 (Focal: 0.4440, Lovász: 0.5794, Dice: 0.5794)
+  Val MCC: 0.4452
+    ├─ Glacier MCC: 0.5085
+    ├─ Debris MCC:  -0.0001
+    └─ Lake MCC:    0.2776
+  ✓ New best model saved! (MCC: 0.4452)
+
+Epoch 34/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5409]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+
+Epoch 34 Summary:
+  Train Loss: 0.5222 (Focal: 0.4467, Lovász: 0.5725, Dice: 0.5725)
+  Val MCC: 0.4539
+    ├─ Glacier MCC: 0.5211
+    ├─ Debris MCC:  -0.0000
+    └─ Lake MCC:    0.2977
+  ✓ New best model saved! (MCC: 0.4539)
+
+Epoch 35/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5354]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+
+Epoch 35 Summary:
+  Train Loss: 0.5149 (Focal: 0.4347, Lovász: 0.5684, Dice: 0.5684)
+  Val MCC: 0.4499
+    ├─ Glacier MCC: 0.5186
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2734
+
+Epoch 36/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.5046]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+
+Epoch 36 Summary:
+  Train Loss: 0.5124 (Focal: 0.4414, Lovász: 0.5597, Dice: 0.5597)
+  Val MCC: 0.4566
+    ├─ Glacier MCC: 0.5306
+    ├─ Debris MCC:  -0.0000
+    └─ Lake MCC:    0.2839
+  ✓ New best model saved! (MCC: 0.4566)
+
+Epoch 37/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.4937]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+
+Epoch 37 Summary:
+  Train Loss: 0.5070 (Focal: 0.4264, Lovász: 0.5607, Dice: 0.5607)
+  Val MCC: 0.4611
+    ├─ Glacier MCC: 0.5229
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2980
+  ✓ New best model saved! (MCC: 0.4611)
+
+Epoch 38/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.5240]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+
+Epoch 38 Summary:
+  Train Loss: 0.5043 (Focal: 0.4268, Lovász: 0.5560, Dice: 0.5560)
+  Val MCC: 0.4580
+    ├─ Glacier MCC: 0.5269
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2956
+
+Epoch 39/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.4715]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]
+
+Epoch 39 Summary:
+  Train Loss: 0.4949 (Focal: 0.4109, Lovász: 0.5509, Dice: 0.5509)
+  Val MCC: 0.4624
+    ├─ Glacier MCC: 0.5279
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2949
+  ✓ New best model saved! (MCC: 0.4624)
+
+Epoch 40/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.4956]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 40 Summary:
+  Train Loss: 0.4920 (Focal: 0.4171, Lovász: 0.5419, Dice: 0.5419)
+  Val MCC: 0.4629
+    ├─ Glacier MCC: 0.5212
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2989
+  ✓ New best model saved! (MCC: 0.4629)
+  ✓ Checkpoint saved
+
+Epoch 41/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.4864]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 41 Summary:
+  Train Loss: 0.4892 (Focal: 0.4095, Lovász: 0.5423, Dice: 0.5423)
+  Val MCC: 0.4609
+    ├─ Glacier MCC: 0.5380
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2900
+
+Epoch 42/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4835]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.74it/s]
+
+Epoch 42 Summary:
+  Train Loss: 0.4863 (Focal: 0.4023, Lovász: 0.5423, Dice: 0.5423)
+  Val MCC: 0.4737
+    ├─ Glacier MCC: 0.5360
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3059
+  ✓ New best model saved! (MCC: 0.4737)
+
+Epoch 43/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.36it/s, loss=0.4764]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 43 Summary:
+  Train Loss: 0.4766 (Focal: 0.3960, Lovász: 0.5304, Dice: 0.5304)
+  Val MCC: 0.4673
+    ├─ Glacier MCC: 0.5366
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2982
+
+Epoch 44/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4480]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+
+Epoch 44 Summary:
+  Train Loss: 0.4724 (Focal: 0.3912, Lovász: 0.5264, Dice: 0.5264)
+  Val MCC: 0.4764
+    ├─ Glacier MCC: 0.5445
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2982
+  ✓ New best model saved! (MCC: 0.4764)
+
+Epoch 45/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4629]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+
+Epoch 45 Summary:
+  Train Loss: 0.4797 (Focal: 0.4000, Lovász: 0.5329, Dice: 0.5329)
+  Val MCC: 0.4671
+    ├─ Glacier MCC: 0.5348
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.2875
+
+Epoch 46/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4688]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+
+Epoch 46 Summary:
+  Train Loss: 0.4735 (Focal: 0.3920, Lovász: 0.5278, Dice: 0.5278)
+  Val MCC: 0.4790
+    ├─ Glacier MCC: 0.5417
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3114
+  ✓ New best model saved! (MCC: 0.4790)
+
+Epoch 47/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4774]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 47 Summary:
+  Train Loss: 0.4685 (Focal: 0.3859, Lovász: 0.5235, Dice: 0.5235)
+  Val MCC: 0.4812
+    ├─ Glacier MCC: 0.5413
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3145
+  ✓ New best model saved! (MCC: 0.4812)
+
+Epoch 48/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:46<00:00,  1.37it/s, loss=0.4494]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.60it/s]
+
+Epoch 48 Summary:
+  Train Loss: 0.4626 (Focal: 0.3852, Lovász: 0.5142, Dice: 0.5142)
+  Val MCC: 0.4810
+    ├─ Glacier MCC: 0.5427
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3067
+
+Epoch 49/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.4854]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+
+Epoch 49 Summary:
+  Train Loss: 0.4575 (Focal: 0.3790, Lovász: 0.5098, Dice: 0.5098)
+  Val MCC: 0.4856
+    ├─ Glacier MCC: 0.5324
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3306
+  ✓ New best model saved! (MCC: 0.4856)
+
+Epoch 50/50
+----------------------------------------------------------------------
+Training: 100%|██████████| 64/64 [00:47<00:00,  1.36it/s, loss=0.4413]
+Validation: 100%|██████████| 1/1 [00:00<00:00,  1.69it/s]
+
+Epoch 50 Summary:
+  Train Loss: 0.4583 (Focal: 0.3816, Lovász: 0.5094, Dice: 0.5094)
+  Val MCC: 0.4769
+    ├─ Glacier MCC: 0.5365
+    ├─ Debris MCC:  0.0000
+    └─ Lake MCC:    0.3089
+  ✓ Checkpoint saved
+
+======================================================================
+TRAINING COMPLETE! Best MCC: 0.4856
+======================================================================

@@ -1,0 +1,165 @@
+🚀 Starting training...
+   Total epochs: 150
+   Best checkpoint will be saved to: /kaggle/working/weights
+Epoch 1/150: 100%
+ 1451/1451 [03:48<00:00,  6.66it/s, loss=0.2097, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.80it/s]
+
+📊 Epoch 1/150
+   Train Loss: 0.2814
+   Loss Components: Focal=0.2055, Dice=0.5852, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 7.4023
+   Val MCC: 0.2562
+   Class MCCs: Background=0.2918, Glacier=0.2752, Debris=-0.0075, Lake=0.0000
+   Prediction %: BG=50.61%, Glacier=43.37%, Debris=6.01%, Lake=0.00%
+   LR: Encoder=0.00003996, Decoder=0.00015984
+   📊 Adjusted MCC: -0.0438 (penalty: 0.3000 for minority performance)
+   ✅ New best model saved! MCC: 0.2562 (Adjusted: -0.0438)
+Epoch 2/150: 100%
+ 1451/1451 [03:48<00:00,  6.34it/s, loss=0.1446, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.89it/s]
+
+📊 Epoch 2/150
+   Train Loss: 0.1942
+   Loss Components: Focal=0.1278, Dice=0.4595, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 14.4218
+   Val MCC: 0.2448
+   Class MCCs: Background=0.2676, Glacier=0.2571, Debris=0.0155, Lake=0.0000
+   Prediction %: BG=64.77%, Glacier=32.52%, Debris=2.71%, Lake=0.00%
+   LR: Encoder=0.00003984, Decoder=0.00015937
+Epoch 3/150: 100%
+ 1451/1451 [03:50<00:00,  5.63it/s, loss=0.1741, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.69it/s]
+
+📊 Epoch 3/150
+   Train Loss: 0.1709
+   Loss Components: Focal=0.1089, Dice=0.4188, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 7.7952
+   Val MCC: 0.2649
+   Class MCCs: Background=0.2892, Glacier=0.2684, Debris=0.0064, Lake=0.0000
+   Prediction %: BG=65.23%, Glacier=34.08%, Debris=0.69%, Lake=0.00%
+   LR: Encoder=0.00003965, Decoder=0.00015858
+   📊 Adjusted MCC: -0.0351 (penalty: 0.3000 for minority performance)
+   ✅ New best model saved! MCC: 0.2649 (Adjusted: -0.0351)
+Epoch 4/150: 100%
+ 1451/1451 [03:48<00:00,  6.52it/s, loss=0.1254, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.34it/s]
+
+📊 Epoch 4/150
+   Train Loss: 0.1580
+   Loss Components: Focal=0.0986, Dice=0.3959, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 14.6933
+   Val MCC: 0.1867
+   Class MCCs: Background=0.2056, Glacier=0.1881, Debris=0.0268, Lake=0.0000
+   Prediction %: BG=75.37%, Glacier=23.44%, Debris=1.20%, Lake=0.00%
+   LR: Encoder=0.00003937, Decoder=0.00015749
+Epoch 5/150: 100%
+ 1451/1451 [03:48<00:00,  6.49it/s, loss=0.1517, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.46it/s]
+
+📊 Epoch 5/150
+   Train Loss: 0.1476
+   Loss Components: Focal=0.0890, Dice=0.3818, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 24.0327
+   Val MCC: 0.2136
+   Class MCCs: Background=0.2372, Glacier=0.2186, Debris=0.0363, Lake=0.0000
+   Prediction %: BG=75.79%, Glacier=21.69%, Debris=2.52%, Lake=0.00%
+   LR: Encoder=0.00003902, Decoder=0.00015609
+Epoch 6/150: 100%
+ 1451/1451 [03:48<00:00,  6.50it/s, loss=0.0705, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.09it/s]
+
+📊 Epoch 6/150
+   Train Loss: 0.1405
+   Loss Components: Focal=0.0831, Dice=0.3700, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 3.7086
+   Val MCC: 0.3101
+   Class MCCs: Background=0.3328, Glacier=0.3204, Debris=-0.0068, Lake=0.0000
+   Prediction %: BG=44.21%, Glacier=55.19%, Debris=0.60%, Lake=0.00%
+   LR: Encoder=0.00003860, Decoder=0.00015439
+   📊 Adjusted MCC: 0.0101 (penalty: 0.3000 for minority performance)
+   ✅ New best model saved! MCC: 0.3101 (Adjusted: 0.0101)
+Epoch 7/150: 100%
+ 1451/1451 [03:48<00:00,  6.55it/s, loss=0.1436, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.31it/s]
+
+📊 Epoch 7/150
+   Train Loss: 0.1356
+   Loss Components: Focal=0.0788, Dice=0.3627, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 6.8382
+   Val MCC: 0.2502
+   Class MCCs: Background=0.2697, Glacier=0.2552, Debris=-0.0017, Lake=0.0000
+   Prediction %: BG=46.77%, Glacier=52.96%, Debris=0.27%, Lake=0.00%
+   LR: Encoder=0.00003810, Decoder=0.00015239
+Epoch 8/150: 100%
+ 1451/1451 [03:47<00:00,  6.20it/s, loss=0.1174, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 14.12it/s]
+
+📊 Epoch 8/150
+   Train Loss: 0.1305
+   Loss Components: Focal=0.0745, Dice=0.3545, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 12.9092
+   Val MCC: 0.2497
+   Class MCCs: Background=0.2731, Glacier=0.2535, Debris=-0.0082, Lake=0.0000
+   Prediction %: BG=61.18%, Glacier=38.14%, Debris=0.68%, Lake=0.00%
+   LR: Encoder=0.00003753, Decoder=0.00015011
+Epoch 9/150: 100%
+ 1451/1451 [03:47<00:00,  6.27it/s, loss=0.0935, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 14.27it/s]
+
+📊 Epoch 9/150
+   Train Loss: 0.1232
+   Loss Components: Focal=0.0722, Dice=0.3270, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 8.9146
+   Val MCC: 0.2571
+   Class MCCs: Background=0.2898, Glacier=0.2936, Debris=0.0054, Lake=0.0027
+   Prediction %: BG=44.74%, Glacier=45.91%, Debris=2.98%, Lake=6.37%
+   LR: Encoder=0.00003689, Decoder=0.00014755
+Epoch 10/150: 100%
+ 1451/1451 [03:47<00:00,  6.62it/s, loss=0.1189, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.45it/s]
+
+📊 Epoch 10/150
+   Train Loss: 0.1100
+   Loss Components: Focal=0.0709, Dice=0.2664, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 5.6765
+   Val MCC: 0.2991
+   Class MCCs: Background=0.3397, Glacier=0.3362, Debris=0.0176, Lake=0.0144
+   Prediction %: BG=50.38%, Glacier=40.44%, Debris=3.11%, Lake=6.08%
+   LR: Encoder=0.00003619, Decoder=0.00014473
+   📊 Adjusted MCC: 0.1991 (penalty: 0.1000 for minority performance)
+   ✅ New best model saved! MCC: 0.2991 (Adjusted: 0.1991)
+Epoch 11/150: 100%
+ 1451/1451 [03:47<00:00,  6.39it/s, loss=0.0675, stage=Stage 1: Learning All Classes, weights=F:0.80 D:0.20 M:0.00, accum=1/2]
+Validation: 100%
+ 5/5 [00:00<00:00, 13.40it/s]
+
+📊 Epoch 11/150
+   Train Loss: 0.1025
+   Loss Components: Focal=0.0677, Dice=0.2415, MCC=0.0000
+   Stage: Stage 1: Learning All Classes
+   Val Loss: 12.1049
+   Val MCC: 0.2920
+   Class MCCs: Background=0.3166, Glacier=0.3125, Debris=0.0354, Lake=-0.0037
+   Prediction %: BG=59.96%, Glacier=36.28%, Debris=3.03%, Lake=0.73%
+   LR: Encoder=0.00003542, Decoder=0.00014165

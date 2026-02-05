@@ -1,0 +1,10 @@
+{
+  "model_name": "unetpp",
+  "encoder": "efficientnet-b2",
+  "attention": "scse",
+  "image_size": 256,
+  "num_classes": 4,
+  "in_channels": 5,
+  "best_mcc": 0.5747465348527919,
+  "best_miou": 0.393771480037922
+}

